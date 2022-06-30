@@ -7,8 +7,7 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-#include <Keypad.h>                                     // This Keypad library is installed from github version of Keypad Lobrary
-
+#include <Keypad.h>                                     // This Keypad library is installed from github version of Keypad Library
 
 const char* ssid = "*********";                         // Enter your WiFi Credentials 
 const char* password = "*********";       
@@ -37,7 +36,7 @@ Adafruit_SSD1306 display(128, 32, &Wire);
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(115200);                                  // general setup with a Serial monitor followed by display
   Serial.println();
   WiFi.begin(ssid,password);
   Serial.print("Connecting to..");
@@ -217,7 +216,7 @@ void quantityUpload(int prodNumInt)
 
 String Send2Webpage(int prodNumInt,int quanInt,int prodDetails[noOfProducts])
 {
- String ptr ="<!DOCTYPE html> <html> \n";
+ String ptr ="<!DOCTYPE html> <html> \n";                                // creating a webPage to display the details
  ptr +="<head> <title> Product Details Page  </title> </head> \n";  // <style> table, th, td { border: 1 px solid black} </style> -- add this to head tag if you need border for the table
  ptr +="<body>";
  ptr +="<p> Current Sold Product ID is   ";
